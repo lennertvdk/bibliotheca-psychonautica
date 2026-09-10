@@ -96,10 +96,6 @@ for (const file of fs.readdirSync(outputDir).filter((name) => name.endsWith('.ht
   fs.copyFileSync(path.join(outputDir, file), path.join(root, file));
 }
 fs.mkdirSync(path.join(root, 'assets'), { recursive: true });
-for (const entry of fs.readdirSync(path.join(outputDir, 'assets'), { withFileTypes: true })) {
-  if (entry.isFile()) {
-    fs.copyFileSync(path.join(outputDir, 'assets', entry.name), path.join(root, 'assets', entry.name));
-  }
-}
+fs.cpSync(path.join(outputDir, 'assets'), path.join(root, 'assets'), { recursive: true, force: true });
 fs.writeFileSync(path.join(root, '.nojekyll'), '');
 console.log(`Built ${pageFiles.length} pages in ${path.relative(root, outputDir)}/`);
