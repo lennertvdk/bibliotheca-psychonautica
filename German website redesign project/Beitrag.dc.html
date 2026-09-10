@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#F5F0E6;color:#1A1B18;font-family:"IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+a{color:#7A5A17;text-decoration:none}
+a:hover{color:#7B2B22}
+p{hyphens:auto}
+</style>
+</helmet>
+<div lang="de" style="background:#F5F0E6">
+<dc-import name="SiteHeader" active="neuigkeiten" hint-size="100%,140px" style="position:sticky;top:0;z-index:50"></dc-import>
+
+<article>
+  <header style="padding:clamp(40px,5vw,64px) 24px clamp(28px,3.5vw,40px)">
+    <div style="max-width:780px;margin:0 auto">
+      <a href="Neuigkeiten.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#7A5A17" style-hover="color:#7B2B22">← Alle Beiträge</a>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8B8371;margin:26px 0 16px">[PLATZHALTER] Datum · Beitrag</div>
+      <h1 style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(2rem,4.4vw,3.1rem);line-height:1.1;letter-spacing:-0.015em;color:#14231F">Neuer Ort: Volkshaus Basel mit Gaia Media</h1>
+      <p style="margin:0;font-family:Spectral,Georgia,serif;font-size:1.22rem;line-height:1.65;color:#3A3C33">Die Sammlung bekommt einen weiteren physischen Ort: im Volkshaus Basel, in Zusammenarbeit mit der Stiftung Gaia Media. [PLATZHALTER] Lead von zwei bis drei Zeilen.</p>
+    </div>
+  </header>
+
+  <figure style="margin:0 0 clamp(36px,5vw,56px)">
+    <img src="assets/bibliothek-solothurn.jpeg" alt="Regale der Bibliothek in Solothurn" style="width:100%;max-height:620px;aspect-ratio:16/9;object-fit:cover;display:block">
+    <figcaption style="max-width:780px;margin:12px auto 0;padding:0 24px;font-size:13.5px;line-height:1.6;color:#6B695F">Die Bibliothek in Solothurn: Bestand wird alphabetisch inventarisiert.</figcaption>
+  </figure>
+
+  <div style="padding:0 24px">
+    <div style="max-width:680px;margin:0 auto">
+      <p style="margin:0 0 24px;font-family:Spectral,Georgia,serif;font-size:1.1rem;line-height:1.78;color:#25281F">[PLATZHALTER] Fliesstext. Ein Beitrag besteht aus zwei bis sechs Absätzen in dieser Breite. Lange deutsche Komposita wie «Bewusstseinsforschung» brauchen eine ruhige Zeilenlänge; hier sind es rund 68 Zeichen.</p>
+      <p style="margin:0 0 24px;font-family:Spectral,Georgia,serif;font-size:1.1rem;line-height:1.78;color:#25281F">[PLATZHALTER] Zweiter Absatz. Zwischenüberschriften gliedern längere Beiträge.</p>
+      <h2 style="margin:40px 0 16px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.55rem;line-height:1.25;color:#14231F">Zwischenüberschrift</h2>
+      <p style="margin:0 0 24px;font-family:Spectral,Georgia,serif;font-size:1.1rem;line-height:1.78;color:#25281F">[PLATZHALTER] Dritter Absatz.</p>
+      <blockquote style="margin:36px 0;padding:0 0 0 24px;border-left:2px solid #A8802F;font-family:Spectral,Georgia,serif;font-style:italic;font-size:1.3rem;line-height:1.55;color:#14231F">«[PLATZHALTER] Zitat aus dem Beitrag, ein bis zwei Zeilen.»</blockquote>
+      <p style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-size:1.1rem;line-height:1.78;color:#25281F">[PLATZHALTER] Schlussabsatz mit Hinweis, wie man mitmachen kann.</p>
+    </div>
+  </div>
+
+  <div style="padding:0 24px clamp(56px,7vw,88px)">
+    <div style="max-width:1000px;margin:0 auto">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7A5A17;padding-bottom:14px;border-bottom:1px solid #DED3BC;margin-bottom:24px">Fotostrecke</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
+        <figure style="margin:0">
+          <img src="assets/nachlass-raetsch-spinnenweben.jpeg" alt="Nachlass Christian Rätsch" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border:1px solid #DED3BC">
+          <figcaption style="margin-top:10px;font-size:13px;line-height:1.6;color:#6B695F">Aus dem Nachlass von Christian Rätsch: Bücher, die sonst verloren gingen.</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img src="assets/nachlass-raetsch-stapel.jpeg" alt="Bücherstapel" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;border:1px solid #DED3BC">
+          <figcaption style="margin-top:10px;font-size:13px;line-height:1.6;color:#6B695F">Bewusstseinsforschung, Physik, Philosophie: die Sammlung ist breit.</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <img src="assets/hofmann-titelseite-signiert.jpeg" alt="Signierte Titelseite" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 25%;display:block;border:1px solid #DED3BC">
+          <figcaption style="margin-top:10px;font-size:13px;line-height:1.6;color:#6B695F">Signiert von Albert Hofmann und Jonathan Ott: ein Schatz aus der Sammlung.</figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="width:100%;aspect-ratio:3/4;background:repeating-linear-gradient(135deg,#EFE7D6 0 6px,#E5DBC4 6px 12px);border:1px solid #DED3BC;display:flex;align-items:center;justify-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8B8371">[PLATZHALTER]</span>
+          </div>
+          <figcaption style="margin-top:10px;font-size:13px;line-height:1.6;color:#6B695F">[PLATZHALTER] Bildlegende.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</article>
+
+<section style="background:#0E1A18;padding:clamp(52px,6vw,84px) 24px">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:clamp(28px,4vw,56px);align-items:center">
+    <div>
+      <h2 style="margin:0 0 12px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.15;color:#F5F0E6">Hilf mit</h2>
+      <p style="margin:0;font-size:16px;line-height:1.7;color:#B9BDB4;max-width:48ch">Mitgliedschaften und Spenden finanzieren Regale, Transporte und die Inventarisierung.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a href="Mitglied-werden.dc.html" style="background:#7B2B22;color:#FBF8F2;font-size:15.5px;font-weight:600;padding:16px 30px;border-radius:2px" style-hover="background:#94382C;color:#FBF8F2">Mitglied werden</a>
+      <a href="Spenden.dc.html" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:16px 30px;border-radius:2px" style-hover="background:rgba(217,184,114,0.12);border-color:#D9B872;color:#F5F0E6">Spenden</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,520px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>
