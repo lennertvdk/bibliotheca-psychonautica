@@ -14,13 +14,14 @@ body{margin:0;background:#F5F0E6;color:#1A1B18;font-family:"IBM Plex Sans",syste
 a{color:#7A5A17;text-decoration:none}
 a:hover{color:#7B2B22}
 p{hyphens:auto}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr!important;gap:42px!important}.hero-menu{position:static!important;width:auto!important}.info-grid{grid-template-columns:1fr!important}.intent-row{grid-template-columns:1fr!important;gap:16px!important}.intent-row a{margin-top:0!important}}
 </style>
 </head>
 <body>
 <div lang="de" style="background:#F5F0E6">
 <header style="background:#F5F0E6;border-bottom:1px solid #DED3BC">
   <div style="max-width:1280px;margin:0 auto;padding:18px 24px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px">
-    <a href="Startseite.html" style="display:block;color:#1A1B18;text-decoration:none;line-height:1">
+    <a href="index.html" style="display:block;color:#1A1B18;text-decoration:none;line-height:1">
       <img src="assets/reference/logo-2012.png" alt="Bibliotheca Psychonautica" style="display:block;width:221px;max-width:100%;height:auto">
     </a>
     <div style="display:flex;align-items:center;gap:20px">
@@ -30,7 +31,7 @@ p{hyphens:auto}
   </div>
   <nav style="border-top:1px solid #E7DECA;background:#FBF8F2">
     <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;gap:30px;overflow-x:auto;scrollbar-width:none">
-      <a href="Startseite.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap;border-bottom:2px solid transparent" style-hover="color:#7B2B22">Startseite</a>
+      <a href="index.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap;border-bottom:2px solid transparent" style-hover="color:#7B2B22">Startseite</a>
       <a href="Neuigkeiten.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Neuigkeiten &amp; Events</a>
       <a href="Themen-und-Sammlungen.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Themen &amp; Sammlungen</a>
       <a href="Der-Verein.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Der Verein</a>
@@ -43,7 +44,7 @@ p{hyphens:auto}
 <section style="position:relative;background:#0E1A18;overflow:hidden">
   <img src="assets/bibliothek-solothurn.jpeg" alt="Glasvitrinen mit alphabetisch beschrifteten Regalen in Solothurn" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0.62;filter:saturate(0.72) contrast(1.02)">
   <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,26,24,0.97) 0%,rgba(14,26,24,0.93) 38%,rgba(14,26,24,0.62) 72%,rgba(14,26,24,0.42) 100%)"></div>
-  <div style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,132px) 24px clamp(56px,7vw,88px)">
+  <div class="hero-grid" style="position:relative;max-width:1280px;margin:0 auto;padding:clamp(72px,10vw,132px) 24px clamp(56px,7vw,88px);display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,280px);gap:clamp(40px,8vw,120px);align-items:end">
     <div style="max-width:760px">
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:30px">
         <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
@@ -57,40 +58,77 @@ p{hyphens:auto}
         <a href="Mitglied-werden.html" style="background:#7B2B22;color:#FBF8F2;font-size:15.5px;font-weight:600;padding:16px 30px;border-radius:2px" style-hover="background:#94382C;color:#FBF8F2">Mitglied werden</a>
         <a href="Spenden.html" style="border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:15.5px;font-weight:500;padding:16px 30px;border-radius:2px" style-hover="background:rgba(217,184,114,0.12);border-color:#D9B872;color:#F5F0E6">Spenden</a>
       </div>
-      <a href="Kontakt.html" style="display:inline-block;margin-top:24px;font-size:14.5px;color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35);padding-bottom:2px" style-hover="color:#F5F0E6;border-bottom-color:#F5F0E6">Sammlung oder Nachlass anbieten →</a>
     </div>
-    <p style="margin:clamp(48px,6vw,72px) 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.7;letter-spacing:0.04em;color:#8E9A93;max-width:46ch">Die Bibliothek in Solothurn: Bestand wird inventarisiert.</p>
+    <div class="hero-menu" style="align-self:start;position:relative;z-index:2;border-top:1px solid rgba(217,184,114,0.38);border-bottom:1px solid rgba(217,184,114,0.38)">
+      <div style="padding:15px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#8E9A93">Navigation</div>
+      <nav aria-label="Schnellzugriff" style="display:flex;flex-direction:column">
+        <a href="#mithelfende" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px" style-hover="color:#D9B872">Ich möchte mithelfen <span aria-hidden="true" style="color:#D9B872">↓</span></a>
+        <a href="Spenden.html" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px" style-hover="color:#D9B872">Ich möchte spenden <span aria-hidden="true" style="color:#D9B872">→</span></a>
+        <a href="#nachlass" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px" style-hover="color:#D9B872">Ich möchte Bücher spenden <span aria-hidden="true" style="color:#D9B872">↓</span></a>
+        <a href="#was-wir-tun" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-top:1px solid rgba(217,184,114,0.2);color:#F5F0E6;font-size:15px" style-hover="color:#D9B872">Ich möchte mehr erfahren <span aria-hidden="true" style="color:#D9B872">↓</span></a>
+      </nav>
+    </div>
   </div>
 </section>
 
-<section style="padding:clamp(64px,8vw,104px) 24px;border-bottom:1px solid #E2D8C2">
+<section id="was-wir-tun" style="padding:clamp(64px,8vw,104px) 24px;border-bottom:1px solid #E2D8C2">
   <div style="max-width:1280px;margin:0 auto">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
       <span style="display:block;width:34px;height:1px;background:#A8802F"></span>
       <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Was wir tun</span>
     </div>
-    <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:22ch">Eine Bibliothek, die zusammenhält, was sonst zerstreut wird</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:1px;background:#DED3BC;border:1px solid #DED3BC">
-      <div style="background:#FBF8F2;padding:34px 28px 38px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#A8802F;margin-bottom:20px">01</div>
-        <h3 style="margin:0 0 12px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.35rem;line-height:1.25;color:#14231F">Sammeln &amp; Bewahren</h3>
-        <p style="margin:0;font-size:15px;line-height:1.72;color:#4C4A42">Private Sammlungen und Nachlässe kommen als Ganzes in die Bibliothek – statt einzeln verkauft, verstreut oder unachtsam entsorgt zu werden.</p>
+    <h2 style="margin:0 0 44px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F;max-width:22ch">Der Verein und seine Bibliothek</h2>
+    <div class="info-grid" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,0.65fr);gap:clamp(36px,7vw,80px);align-items:start">
+      <div style="max-width:72ch">
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Mit Gründung des Vereins Bibliotheca Psychonautica wurde der Grundstein gelegt für eine zukünftige Stiftung mit dem Ziel der Zusammenführung und Bewahrung fundierter Privatsammlungen von psychonautischer Literatur, Videos, DVDs, CDs, Schallplatten, Bildern, Fotos, Kunstwerken, Briefwechseln, Tagebüchern, Forschungsmaterial und Manuskripten, um eine möglichst umfangreiche drogen- und rauschkundliche Bibliothek aufzubauen, die das psychonautische Wissen über veränderte Bewusstseinszustände lebendig erhält.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">SammlerInnen von psychonautischer Fachliteratur können ihre privaten Nachlässe dem Verein bzw. der Stiftung vermachen, um dieses wertvolle Material zu erhalten und anderen Interessenten zugänglich zu machen und es vor eigennützigen, gewinnorientierten und kommerziellen Absichten, aber auch vor unachtsamer Entsorgung zu schützen.</p>
+        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Für den Aufbau der Bibliothek stehen dem Verein seit Juli 2013 Regalflächen in den Räumen des Nachtschatten Verlages in Solothurn zur Verfügung. Ab 2028 soll in Zusammenarbeit mit der Stiftung Gaia Media ein weiterer physischer Ort in Basel entstehen.</p>
+        <p style="margin:0;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Es sind bereits einige umfangreiche Sammlungen von Büchern und Journalen eingegangen, die schrittweise inventarisiert werden. Die Liste des bis jetzt erfassten Bibliotheksbestandes kann beim Verein angefordert werden. Das Entleihen von Büchern ist ausschliesslich Mitgliedern vorbehalten und wird durch den Vereinsvorstand geregelt.</p>
       </div>
-      <div style="background:#FBF8F2;padding:34px 28px 38px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#A8802F;margin-bottom:20px">02</div>
-        <h3 style="margin:0 0 12px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.35rem;line-height:1.25;color:#14231F">Zugänglich machen</h3>
-        <p style="margin:0;font-size:15px;line-height:1.72;color:#4C4A42">Der Bestand wird schrittweise inventarisiert. Das Entleihen von Büchern ist Mitgliedern vorbehalten und wird durch den Vereinsvorstand geregelt.</p>
+      <div>
+        <div style="padding-top:4px;border-top:1px solid #E2D8C2">
+          <div style="margin:18px 0 12px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#8B8371">Kernfunktionen</div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px 24px">
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Sammeln</span>
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Bewahren</span>
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Inventarisieren</span>
+            <span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;font-weight:500;color:#14231F">Zugänglich machen</span>
+          </div>
+        </div>
+        <aside style="margin-top:30px;background:#FBF8F2;border:1px solid #DED3BC;padding:30px 28px 32px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7A5A17;padding-bottom:14px;border-bottom:1px solid #E2D8C2">Standorte</div>
+        <div style="display:flex;flex-direction:column;gap:20px;padding-top:20px">
+          <div>
+            <div style="font-family:Spectral,Georgia,serif;font-size:1.2rem;color:#14231F">Solothurn</div>
+            <p style="margin:5px 0 0;font-size:14.5px;line-height:1.65;color:#4C4A42">Regalflächen in den Räumen des Nachtschatten Verlages, seit Juli 2013.</p>
+          </div>
+          <div style="height:1px;background:#EDE5D5"></div>
+          <div>
+            <div style="display:flex;align-items:baseline;gap:10px"><span style="font-family:Spectral,Georgia,serif;font-size:1.2rem;color:#14231F">Basel</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#7B2B22;border:1px solid #D9C0B8;padding:3px 7px">neu</span></div>
+            <p style="margin:5px 0 0;font-size:14.5px;line-height:1.65;color:#4C4A42">Ab 2028 soll hier in Zusammenarbeit mit der Stiftung Gaia Media ein physischer Ort entstehen.</p>
+          </div>
+        </div>
+        </aside>
       </div>
-      <div style="background:#FBF8F2;padding:34px 28px 38px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#A8802F;margin-bottom:20px">03</div>
-        <h3 style="margin:0 0 12px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.35rem;line-height:1.25;color:#14231F">Digitalisieren</h3>
-        <p style="margin:0;font-size:15px;line-height:1.72;color:#4C4A42">Geplant sind die Digitalisierung der Archivmaterialien und der Aufbau einer KI-gestützten Onlinedatenbank für die Recherche im Bestand.</p>
-      </div>
-      <div style="background:#FBF8F2;padding:34px 28px 38px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#A8802F;margin-bottom:20px">04</div>
-        <h3 style="margin:0 0 12px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.35rem;line-height:1.25;color:#14231F">Orte schaffen</h3>
-        <p style="margin:0;font-size:15px;line-height:1.72;color:#4C4A42">Regalflächen beim Nachtschatten Verlag in Solothurn und ab 2028 ein physischer Ort in Basel in Zusammenarbeit mit der Stiftung Gaia Media.</p>
-      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mithelfende" style="padding:clamp(56px,7vw,88px) 24px;background:#EDE5D5;border-bottom:1px solid #D8CCB2">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+      <span style="display:block;width:34px;height:1px;background:#A8802F"></span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#7A5A17">Ich möchte mithelfen</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px 40px;margin-bottom:34px">
+      <div><h2 style="margin:0 0 10px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.1;color:#14231F;max-width:18ch">Offene Positionen</h2><p style="margin:0;font-size:15.5px;line-height:1.7;color:#4C4A42;max-width:62ch">Die Mitarbeit ist ehrenamtlich. Gesucht sind Menschen, die punktuell oder regelmässig Verantwortung übernehmen und beim Aufbau der Bibliothek mitwirken möchten.</p></div>
+      <a href="Kontakt.html?interesse=Projektaufbau#mitmachen" style="display:inline-block;color:#7A5A17;font-size:14.5px;font-weight:500;border-bottom:1px solid #C9BCA0;padding-bottom:2px;white-space:nowrap" style-hover="color:#7B2B22;border-bottom-color:#7B2B22">Interesse melden →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#DED3BC;border:1px solid #DED3BC">
+      <article style="background:#FBF8F2;padding:26px 24px 30px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;color:#A8802F;margin-bottom:16px">01 · BESTAND</div><h3 style="margin:0 0 9px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.3rem;line-height:1.25;color:#14231F">Archivierung &amp; Inventarisierung</h3><p style="margin:0;font-size:14.5px;line-height:1.7;color:#4C4A42">Du bist dafür verantwortlich, Bücher zu erfassen, zu ordnen, zu beschreiben und ihre Geschichte für die Sammlung festzuhalten.</p></article>
+      <article style="background:#FBF8F2;padding:26px 24px 30px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;color:#A8802F;margin-bottom:16px">02 · DIGITAL</div><h3 style="margin:0 0 9px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.3rem;line-height:1.25;color:#14231F">Digitalisierung</h3><p style="margin:0;font-size:14.5px;line-height:1.7;color:#4C4A42">Du bist dafür verantwortlich, Archivmaterial zu scannen, Dateien zu pflegen und Quellen für die Zukunft zu sichern.</p></article>
+      <article style="background:#FBF8F2;padding:26px 24px 30px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;color:#A8802F;margin-bottom:16px">03 · INHALT</div><h3 style="margin:0 0 9px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.3rem;line-height:1.25;color:#14231F">Recherche &amp; Redaktion</h3><p style="margin:0;font-size:14.5px;line-height:1.7;color:#4C4A42">Du bist dafür verantwortlich, Quellen zu erschliessen, Themen zu recherchieren und Texte oder Übersetzungen vorzubereiten.</p></article>
+      <article style="background:#FBF8F2;padding:26px 24px 30px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;color:#A8802F;margin-bottom:16px">04 · VERMITTLUNG</div><h3 style="margin:0 0 9px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.3rem;line-height:1.25;color:#14231F">Veranstaltungen &amp; Aufbau</h3><p style="margin:0;font-size:14.5px;line-height:1.7;color:#4C4A42">Du bist dafür verantwortlich, Veranstaltungen, Kommunikation, Logistik oder den weiteren Aufbau des Projekts mitzugestalten.</p></article>
     </div>
   </div>
 </section>
@@ -120,14 +158,8 @@ p{hyphens:auto}
         <figcaption style="margin-top:12px;font-size:13.5px;line-height:1.6;color:#4C4A42">Signiert von Albert Hofmann und Jonathan Ott:&nbsp;ein Schatz aus der Sammlung.</figcaption>
       </figure>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:start">
-      <div style="max-width:66ch">
-        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Mit Gründung des Vereins Bibliotheca Psychonautica wurde der Grundstein gelegt für eine zukünftige Stiftung mit dem Ziel der Zusammenführung und Bewahrung fundierter Privatsammlungen von psychonautischer Literatur, Videos, DVDs, CDs, Schallplatten, Bildern, Fotos, Kunstwerken, Briefwechseln, Tagebüchern, Forschungsmaterial und Manuskripten, um eine möglichst umfangreiche drogen- und rauschkundliche Bibliothek aufzubauen, die das psychonautische Wissen über veränderte Bewusstseinszustände lebendig erhält.</p>
-        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">SammlerInnen von psychonautischer Fachliteratur können ihre privaten Nachlässe dem Verein bzw. der Stiftung vermachen, um dieses wertvolle Material zu erhalten und anderen Interessenten zugänglich zu machen und es vor eigennützigen, gewinnorientierten und kommerziellen Absichten, aber auch vor unachtsamer Entsorgung zu schützen.</p>
-        <p style="margin:0 0 22px;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Für den Aufbau der Bibliothek stehen dem Verein seit Juli 2013 Regalflächen in den Räumen des Nachtschatten Verlages in Solothurn zur Verfügung. Ab 2028 soll in Zusammenarbeit mit der Stiftung Gaia Media ein weiterer physischer Ort in Basel entstehen.</p>
-        <p style="margin:0;font-family:Spectral,Georgia,serif;font-size:1.08rem;line-height:1.75;color:#3A3C33">Es sind bereits einige umfangreiche Sammlungen von Büchern und Journalen eingegangen, die schrittweise inventarisiert werden. Die Liste des bis jetzt erfassten Bibliotheksbestandes kann beim Verein angefordert werden. Das Entleihen von Büchern ist ausschliesslich Mitgliedern vorbehalten und wird durch den Vereinsvorstand geregelt.</p>
-      </div>
-      <aside style="background:#FBF8F2;border:1px solid #DED3BC;padding:30px 28px 32px">
+    <div style="display:flex;justify-content:flex-end">
+      <aside style="width:min(100%,380px);background:#FBF8F2;border:1px solid #DED3BC;padding:30px 28px 32px">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7A5A17;padding-bottom:14px;border-bottom:1px solid #E2D8C2">Standorte</div>
         <div style="display:flex;flex-direction:column;gap:20px;padding-top:20px">
           <div>
@@ -140,12 +172,12 @@ p{hyphens:auto}
             <p style="margin:5px 0 0;font-size:14.5px;line-height:1.65;color:#4C4A42">Ab 2028 soll hier in Zusammenarbeit mit der Stiftung Gaia Media ein physischer Ort entstehen.</p>
           </div>
         </div>
-      </aside>
+      </div>
     </div>
   </div>
 </section>
 
-<section style="background:#14231F;color:#D8D4C7;padding:clamp(64px,8vw,104px) 24px">
+<section id="nachlass" style="background:#14231F;color:#D8D4C7;padding:clamp(64px,8vw,104px) 24px">
   <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,5vw,72px);align-items:center">
     <figure style="margin:0">
       <img src="assets/nachlass-raetsch-spinnenweben.jpeg" alt="Spinnwebenbedecktes Regal aus dem Nachlass Christian Rätsch" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid #2B3A34">
@@ -154,9 +186,9 @@ p{hyphens:auto}
     <div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
         <span style="display:block;width:34px;height:1px;background:#D9B872"></span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#D9B872">Nachlass anbieten</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#D9B872">Der Weg in die Bibliothek</span>
       </div>
-      <h2 style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#F5F0E6;max-width:20ch">So kommt eine Sammlung in die Bibliothek</h2>
+      <h2 style="margin:0 0 20px;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#F5F0E6;max-width:20ch">Was nach deiner Nachricht passiert</h2>
       <p style="margin:0 0 40px;font-size:16px;line-height:1.72;color:#B9BDB4;max-width:52ch">Drei Schritte, ohne Eile und ohne Verpflichtung. Wir beraten auch Angehörige, die einen Nachlass ordnen müssen.</p>
       <div style="display:flex;flex-direction:column;gap:26px">
         <div style="display:flex;gap:20px;align-items:flex-start">
@@ -217,49 +249,6 @@ p{hyphens:auto}
 
 
 
-<section style="padding:clamp(64px,8vw,104px) 24px;border-bottom:1px solid #E2D8C2">
-  <div style="max-width:1280px;margin:0 auto">
-    <div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:flex-end;justify-content:space-between;margin-bottom:40px">
-      <div>
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
-          <span style="display:block;width:34px;height:1px;background:#A8802F"></span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#7A5A17">Neuigkeiten</span>
-        </div>
-        <h2 style="margin:0;font-family:Spectral,Georgia,serif;font-weight:400;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.15;letter-spacing:-0.01em;color:#14231F">Aus dem Archiv</h2>
-      </div>
-      <a href="Neuigkeiten.html" style="font-size:14.5px;font-weight:500;color:#7A5A17;border-bottom:1px solid #C9BCA0;padding-bottom:2px" style-hover="color:#7B2B22;border-bottom-color:#7B2B22">Alle Beiträge &amp; Termine →</a>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:22px">
-      <a href="Beitrag.html" style="display:block;background:#FBF8F2;border:1px solid #DED3BC;color:inherit" style-hover="border-color:#A8802F;color:inherit">
-        <img src="assets/bibliothek-solothurn.jpeg" alt="Regale in Solothurn" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block">
-        <div style="padding:24px 24px 28px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#7A5A17">[PLATZHALTER] Datum · Beitrag</div>
-          <h3 style="margin:12px 0 8px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.3rem;line-height:1.3;color:#14231F">Neuer Ort in Basel mit Gaia Media</h3>
-          <p style="margin:0;font-size:14.5px;line-height:1.7;color:#4C4A42">Ab 2028 soll in Zusammenarbeit mit der Stiftung Gaia Media ein weiterer physischer Ort für die Sammlung entstehen. [PLATZHALTER] Text folgt.</p>
-        </div>
-      </a>
-      <a href="Beitrag.html" style="display:block;background:#FBF8F2;border:1px solid #DED3BC;color:inherit" style-hover="border-color:#A8802F;color:inherit">
-        <img src="assets/nachlass-raetsch-stapel.jpeg" alt="Bücherstapel aus dem Nachlass" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block">
-        <div style="padding:24px 24px 28px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#7A5A17">[PLATZHALTER] Datum · Fotobeitrag</div>
-          <h3 style="margin:12px 0 8px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.3rem;line-height:1.3;color:#14231F">Nachlass Christian Rätsch: erste Kisten</h3>
-          <p style="margin:0;font-size:14.5px;line-height:1.7;color:#4C4A42">[PLATZHALTER] Teaser von zwei bis drei Zeilen, der beschreibt, was auf den Fotos zu sehen ist.</p>
-        </div>
-      </a>
-      <a href="Beitrag.html" style="display:block;background:#FBF8F2;border:1px solid #DED3BC;color:inherit" style-hover="border-color:#A8802F;color:inherit">
-        <div style="width:100%;aspect-ratio:3/2;background:repeating-linear-gradient(135deg,#EFE7D6 0 6px,#E5DBC4 6px 12px);display:flex;align-items:center;justify-content:center">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8B8371">[PLATZHALTER] Bild</span>
-        </div>
-        <div style="padding:24px 24px 28px">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#7A5A17">[PLATZHALTER] Datum · Beitrag</div>
-          <h3 style="margin:12px 0 8px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.3rem;line-height:1.3;color:#8C887C">[PLATZHALTER] Titel des Beitrags</h3>
-          <p style="margin:0;font-size:14.5px;line-height:1.7;color:#4C4A42">[PLATZHALTER] Teaser von zwei bis drei Zeilen.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
 
 <section style="padding:clamp(56px,7vw,88px) 24px;border-bottom:1px solid #E2D8C2">
   <div style="max-width:1280px;margin:0 auto">
@@ -307,7 +296,7 @@ p{hyphens:auto}
     <div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7E7A6E;padding-bottom:14px;border-bottom:1px solid #24322E;margin-bottom:16px">Navigation</div>
       <div style="display:flex;flex-direction:column;gap:9px">
-        <a href="Startseite.html" style="color:#CFCCC1" style-hover="color:#D9B872">Startseite</a>
+        <a href="index.html" style="color:#CFCCC1" style-hover="color:#D9B872">Startseite</a>
         <a href="Neuigkeiten.html" style="color:#CFCCC1" style-hover="color:#D9B872">Neuigkeiten &amp; Events</a>
         <a href="Themen-und-Sammlungen.html" style="color:#CFCCC1" style-hover="color:#D9B872">Themen &amp; Sammlungen</a>
         <a href="Der-Verein.html" style="color:#CFCCC1" style-hover="color:#D9B872">Der Verein</a>

@@ -98,14 +98,15 @@ input:focus,textarea:focus{outline:2px solid #A8802F;outline-offset:1px}
     </div>
 
     <div>
-      <form style="background:#FBF8F2;border:1px solid #DED3BC;padding:clamp(24px,3vw,38px)">
+      <form id="mitmachen" style="background:#FBF8F2;border:1px solid #DED3BC;padding:clamp(24px,3vw,38px)" onsubmit="sendContactMessage(event)">
         <h2 style="margin:0 0 8px;font-family:Spectral,Georgia,serif;font-weight:500;font-size:1.6rem;color:#14231F">Formular für Mitteilungen und Anfragen</h2>
         <p style="margin:0 0 26px;font-size:13.5px;color:#6B695F">Die mit einem * gekennzeichneten Felder sind Pflichtfelder</p>
         <label style="display:block;margin-bottom:18px"><span style="display:block;font-size:13px;font-weight:500;color:#3A3C33;margin-bottom:7px">Name *</span><input type="text" name="name" required style="width:100%;padding:13px 14px;font-size:15px;color:#1A1B18;background:#FFFDF9;border:1px solid #CFC2A6;border-radius:2px"></label>
         <label style="display:block;margin-bottom:18px"><span style="display:block;font-size:13px;font-weight:500;color:#3A3C33;margin-bottom:7px">E-Mail *</span><input type="email" name="email" required style="width:100%;padding:13px 14px;font-size:15px;color:#1A1B18;background:#FFFDF9;border:1px solid #CFC2A6;border-radius:2px"></label>
+        <fieldset style="margin:0 0 18px;padding:0;border:0"><legend style="display:block;font-size:13px;font-weight:500;color:#3A3C33;margin-bottom:9px">Wobei möchtest du dich einbringen?</legend><div style="display:grid;gap:8px"><label style="display:flex;gap:9px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:#4C4A42"><input type="checkbox" name="interesse" value="Bücher und Sammlungen" style="margin-top:3px">Bücher und Sammlungen beitragen</label><label style="display:flex;gap:9px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:#4C4A42"><input type="checkbox" name="interesse" value="Nachlässe" style="margin-top:3px">Nachlässe organisieren</label><label style="display:flex;gap:9px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:#4C4A42"><input type="checkbox" name="interesse" value="Archivierung und Digitalisierung" style="margin-top:3px">Archivierung und Digitalisierung</label><label style="display:flex;gap:9px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:#4C4A42"><input type="checkbox" name="interesse" value="Projektaufbau" style="margin-top:3px">Aufbau des Projekts, Recherche oder Veranstaltungen</label></div></fieldset>
         <label style="display:block"><span style="display:block;font-size:13px;font-weight:500;color:#3A3C33;margin-bottom:7px">Nachricht *</span><textarea name="nachricht" rows="7" required style="width:100%;padding:13px 14px;font-size:15px;color:#1A1B18;background:#FFFDF9;border:1px solid #CFC2A6;border-radius:2px;resize:vertical"></textarea></label>
-        <button type="button" style="margin-top:24px;width:100%;background:#7B2B22;color:#FBF8F2;font-size:16px;font-weight:600;padding:17px 28px;border:none;border-radius:2px;cursor:pointer" style-hover="background:#94382C">Nachricht senden</button>
-        <p style="margin:14px 0 0;font-size:13px;line-height:1.65;color:#6B695F">[PLATZHALTER] Versand später über einen Formulardienst oder per mailto.</p>
+        <button type="submit" style="margin-top:24px;width:100%;background:#7B2B22;color:#FBF8F2;font-size:16px;font-weight:600;padding:17px 28px;border:none;border-radius:2px;cursor:pointer" style-hover="background:#94382C">Anfrage per E-Mail vorbereiten</button>
+        <p style="margin:14px 0 0;font-size:13px;line-height:1.65;color:#6B695F">Dein E-Mail-Programm öffnet sich mit den Angaben als Entwurf. Es wird nichts automatisch versendet.</p>
         
       </form>
       <div style="margin-top:24px;background:#14231F;padding:clamp(24px,3vw,34px)">
@@ -167,5 +168,29 @@ input:focus,textarea:focus{outline:2px solid #A8802F;outline-offset:1px}
   </div>
 </footer>
 </div>
+<script>
+  const interestFromLink = new URLSearchParams(window.location.search).get('interesse');
+  if (interestFromLink) {
+    document.querySelectorAll('input[name="interesse"]').forEach((input) => {
+      input.checked = input.value === interestFromLink;
+    });
+  }
+
+  function sendContactMessage(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const interests = data.getAll('interesse');
+    const subject = interests.length ? 'Mitarbeit: ' + interests.join(', ') : 'Anfrage zur Mitarbeit';
+    const body = [
+      'Name: ' + data.get('name'),
+      'E-Mail: ' + data.get('email'),
+      'Interessen: ' + (interests.length ? interests.join(', ') : 'noch offen'),
+      '',
+      data.get('nachricht')
+    ].join('\n');
+    window.location.href = 'mailto:info@bibliotheca-psychonautica.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+</script>
 </body>
 </html>
