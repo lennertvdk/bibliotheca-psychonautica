@@ -86,7 +86,7 @@ def translatable_attr(name, value, attrs):
         return False
     if name == "content":
         prop = attrs.get("property", "")
-        if prop in ("og:title", "og:description"):
+        if prop in ("og:title", "og:description", "og:image:alt"):
             return True
         if attrs.get("name") not in ("description", "keywords"):
             return False
@@ -185,7 +185,9 @@ def translate_page(source_page, translations, missing):
     def on_attr(name, value, attrs, start, raw):
         new = None
         prop = attrs.get("property", "")
-        if name == "content" and prop == "og:url":
+        if name == "content" and prop == "og:image":
+            new = value.replace("/assets/og-de.jpg", "/assets/og-en.jpg")
+        elif name == "content" and prop == "og:url":
             new = value.replace("/" + source_page, "/en/" + PAGES[source_page])
         elif name == "content" and prop == "og:locale":
             new = "en_GB"
