@@ -95,8 +95,8 @@ p{hyphens:auto}
         <p style="margin:0 0 26px;font-size:15px;line-height:1.6;color:#B9BDB4">Regiobank Solothurn, 4502 Solothurn</p>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#8E9A93;margin-bottom:8px">IBAN</div>
         <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:24px">
-          <code style="font-family:'IBM Plex Mono',monospace;font-size:clamp(15px,2vw,19px);letter-spacing:0.04em;color:#F5F0E6;background:#0E1A18;border:1px solid #2B3A34;padding:14px 16px;border-radius:2px">CH26 0878 5044 8465 5014 5</code>
-          <button type="button" style="cursor:pointer;background:transparent;border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:14px;font-weight:500;padding:14px 20px;border-radius:2px;white-space:nowrap" style-hover="background:rgba(217,184,114,0.14);border-color:#D9B872">IBAN kopieren</button>
+          <code id="iban-value" style="font-family:'IBM Plex Mono',monospace;font-size:clamp(15px,2vw,19px);letter-spacing:0.04em;color:#F5F0E6;background:#0E1A18;border:1px solid #2B3A34;padding:14px 16px;border-radius:2px">CH26 0878 5044 8465 5014 5</code>
+          <button type="button" onclick="copyIban(this)" style="cursor:pointer;background:transparent;border:1px solid rgba(217,184,114,0.55);color:#F5F0E6;font-size:14px;font-weight:500;padding:14px 20px;border-radius:2px;white-space:nowrap" style-hover="background:rgba(217,184,114,0.14);border-color:#D9B872">IBAN kopieren</button>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding-top:22px;border-top:1px solid #2B3A34">
           <div>
@@ -213,5 +213,31 @@ p{hyphens:auto}
   </div>
 </footer>
 </div>
+<script>
+  async function copyIban(button) {
+    const iban = document.getElementById('iban-value').textContent.trim();
+    const originalLabel = button.textContent;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(iban);
+      } else {
+        const field = document.createElement('textarea');
+        field.value = iban;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        document.execCommand('copy');
+        field.remove();
+      }
+      button.textContent = 'IBAN kopiert';
+      setTimeout(() => { button.textContent = originalLabel; }, 2200);
+    } catch (error) {
+      button.textContent = 'Kopieren fehlgeschlagen';
+      setTimeout(() => { button.textContent = originalLabel; }, 2200);
+    }
+  }
+</script>
 </body>
 </html>
