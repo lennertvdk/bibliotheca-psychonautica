@@ -188,7 +188,9 @@ def translate_page(source_page, translations, missing):
     out = src
     for start, end, replacement in sorted(edits, key=lambda e: -e[0]):
         out = out[:start] + replacement + out[end:]
-    out = out.replace('<html lang="de"', '<html lang="en"').replace('lang="de"', 'lang="en"')
+    # `lang="de"` only as a whole attribute - the lookbehind keeps this from
+    # matching inside `hreflang="de"`, which must stay German on both sides.
+    out = re.sub(r'(?<![\w-])lang="de"', 'lang="en"', out)
     for de_value, en_value in VALUE_MAP.items():
         out = out.replace(f'name="interesse" value="{de_value}"', f'name="interesse" value="{en_value}"')
     for de_js, en_js in JS_MAP.items():
