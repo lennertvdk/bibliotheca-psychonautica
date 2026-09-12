@@ -14,6 +14,22 @@ body{margin:0;background:#F5F0E6;color:#1A1B18;font-family:"IBM Plex Sans",syste
 a{color:#7A5A17;text-decoration:none}
 a:hover{color:#7B2B22}
 input,textarea{font-family:inherit}
+.hv1:hover{background:#14231F;color:#F5F0E6}
+.hv10:hover{color:#7B2B22;border-bottom-color:#7B2B22}
+.hv11:hover{color:#D9B872}
+.hv12:hover{color:#F5F0E6;border-bottom-color:#F5F0E6}
+.hv2:hover{background:#1B2E28;color:inherit}
+.hv3:hover{background:#94382C}
+.hv4:hover{background:#94382C;color:#FBF8F2}
+.hv5:hover{background:rgba(217,184,114,0.12);border-color:#D9B872;color:#F5F0E6}
+.hv6:hover{background:rgba(217,184,114,0.14);border-color:#D9B872}
+.hv7:hover{border-color:#A8802F}
+.hv8:hover{border-color:#A8802F;color:inherit}
+.hv9:hover{color:#7B2B22}
+.hv1:focus-visible,.hv10:focus-visible,.hv11:focus-visible,.hv12:focus-visible,.hv2:focus-visible,.hv3:focus-visible,.hv4:focus-visible,.hv5:focus-visible,.hv6:focus-visible,.hv7:focus-visible,.hv8:focus-visible,.hv9:focus-visible{outline:2px solid #A8802F;outline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid #A8802F;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.nav-scroll{position:relative}.nav-scroll::after{content:'';position:absolute;top:0;right:0;bottom:0;width:40px;pointer-events:none;background:linear-gradient(90deg,rgba(251,248,242,0),#FBF8F2)}@media(min-width:900px){.nav-scroll::after{display:none}}
 </style>
 </head>
 <body>
@@ -133,18 +149,18 @@ input,textarea{font-family:inherit}
       <img src="assets/reference/logo-2012.png" alt="Bibliotheca Psychonautica" style="display:block;width:221px;max-width:100%;height:auto">
     </a>
     <div style="display:flex;align-items:center;gap:20px">
-      <a href="Spenden.html" style="font-size:14.5px;font-weight:500;color:#14231F;border-bottom:1px solid #C9BCA0;padding-bottom:2px" style-hover="color:#7B2B22;border-bottom-color:#7B2B22">Spenden</a>
-      <a href="Mitglied-werden.html" style="background:#7B2B22;color:#FBF8F2;font-size:14.5px;font-weight:600;letter-spacing:0.01em;padding:12px 22px;border-radius:2px;display:inline-block;white-space:nowrap" style-hover="background:#94382C;color:#FBF8F2">Mitglied werden</a>
+      <a class="hv10" href="Spenden.html" style="font-size:14.5px;font-weight:500;color:#14231F;border-bottom:1px solid #C9BCA0;padding-bottom:2px">Spenden</a>
+      <a class="hv4" href="Mitglied-werden.html" style="background:#7B2B22;color:#FBF8F2;font-size:14.5px;font-weight:600;letter-spacing:0.01em;padding:12px 22px;border-radius:2px;display:inline-block;white-space:nowrap">Mitglied werden</a>
     </div>
   </div>
-  <nav style="border-top:1px solid #E7DECA;background:#FBF8F2">
-    <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;gap:30px;overflow-x:auto;scrollbar-width:none">
-      <a href="index.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap;border-bottom:2px solid transparent" style-hover="color:#7B2B22">Startseite</a>
-      <a href="Neuigkeiten.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Neuigkeiten &amp; Events</a>
-      <a href="Themen-und-Sammlungen.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Themen &amp; Sammlungen</a>
-      <a href="Der-Verein.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Der Verein</a>
-      <a href="Spenden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Spenden</a>
-      <a href="Kontakt.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Kontakt</a>
+  <nav class="nav-scroll" style="border-top:1px solid #E7DECA;background:#FBF8F2">
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;gap:30px;overflow-x:auto;scrollbar-width:thin">
+      <a class="hv9" href="index.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap;border-bottom:2px solid transparent">Startseite</a>
+      <a class="hv9" href="Neuigkeiten.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Neuigkeiten &amp; Events</a>
+      <a class="hv9" href="Themen-und-Sammlungen.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Themen &amp; Sammlungen</a>
+      <a class="hv9" href="Der-Verein.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Der Verein</a>
+      <a class="hv9" href="Spenden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Spenden</a>
+      <a class="hv9" href="Kontakt.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Kontakt</a>
     </div>
   </nav>
 </header>
@@ -157,18 +173,18 @@ input,textarea{font-family:inherit}
       <img src="assets/reference/logo-2012.png" alt="Bibliotheca Psychonautica" style="display:block;width:221px;max-width:100%;height:auto">
     </a>
     <div style="display:flex;align-items:center;gap:20px">
-      <a href="Spenden.html" style="font-size:14.5px;font-weight:500;color:#14231F;border-bottom:1px solid #C9BCA0;padding-bottom:2px" style-hover="color:#7B2B22;border-bottom-color:#7B2B22">Spenden</a>
-      <a href="Mitglied-werden.html" style="background:#7B2B22;color:#FBF8F2;font-size:14.5px;font-weight:600;letter-spacing:0.01em;padding:12px 22px;border-radius:2px;display:inline-block;white-space:nowrap" style-hover="background:#94382C;color:#FBF8F2">Mitglied werden</a>
+      <a class="hv10" href="Spenden.html" style="font-size:14.5px;font-weight:500;color:#14231F;border-bottom:1px solid #C9BCA0;padding-bottom:2px">Spenden</a>
+      <a class="hv4" href="Mitglied-werden.html" style="background:#7B2B22;color:#FBF8F2;font-size:14.5px;font-weight:600;letter-spacing:0.01em;padding:12px 22px;border-radius:2px;display:inline-block;white-space:nowrap">Mitglied werden</a>
     </div>
   </div>
   <nav style="border-top:1px solid #E7DECA;background:#FBF8F2">
-    <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;gap:30px;overflow-x:auto;scrollbar-width:none">
-      <a href="index.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap;border-bottom:2px solid transparent" style-hover="color:#7B2B22">Startseite</a>
-      <a href="Neuigkeiten.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Neuigkeiten &amp; Events</a>
-      <a href="Themen-und-Sammlungen.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Themen &amp; Sammlungen</a>
-      <a href="Der-Verein.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Der Verein</a>
-      <a href="Spenden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Spenden</a>
-      <a href="Kontakt.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap" style-hover="color:#7B2B22">Kontakt</a>
+    <div style="max-width:1280px;margin:0 auto;padding:0 24px;display:flex;gap:30px;overflow-x:auto;scrollbar-width:thin">
+      <a class="hv9" href="index.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap;border-bottom:2px solid transparent">Startseite</a>
+      <a class="hv9" href="Neuigkeiten.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Neuigkeiten &amp; Events</a>
+      <a class="hv9" href="Themen-und-Sammlungen.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Themen &amp; Sammlungen</a>
+      <a class="hv9" href="Der-Verein.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Der Verein</a>
+      <a class="hv9" href="Spenden.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Spenden</a>
+      <a class="hv9" href="Kontakt.html" style="flex:0 0 auto;padding:13px 0 11px;font-size:14.5px;color:#3A3C36;white-space:nowrap">Kontakt</a>
     </div>
   </nav>
 </header>
@@ -183,18 +199,18 @@ input,textarea{font-family:inherit}
       <p style="margin:20px 0 0;color:#A8A499;max-width:30ch">Verein zur Erhaltung und Förderung von geistbewegendem Wissen</p>
       <p style="margin:20px 0 0">Kronengasse 11<br>CH – 4500 Solothurn<br>Switzerland</p>
       <p style="margin:14px 0 0;color:#A8A499">Fon +41 32 621 89 49<br>Fax +41 32 621 89 47</p>
-      <p style="margin:14px 0 0"><a href="mailto:info@bibliotheca-psychonautica.org" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)" style-hover="color:#F5F0E6;border-bottom-color:#F5F0E6">info@bibliotheca-psychonautica.org</a></p>
+      <p style="margin:14px 0 0"><a class="hv12" href="mailto:info@bibliotheca-psychonautica.org" style="color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">info@bibliotheca-psychonautica.org</a></p>
     </div>
     <div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7E7A6E;padding-bottom:14px;border-bottom:1px solid #24322E;margin-bottom:16px">Navigation</div>
       <div style="display:flex;flex-direction:column;gap:9px">
-        <a href="index.html" style="color:#CFCCC1" style-hover="color:#D9B872">Startseite</a>
-        <a href="Neuigkeiten.html" style="color:#CFCCC1" style-hover="color:#D9B872">Neuigkeiten &amp; Events</a>
-        <a href="Themen-und-Sammlungen.html" style="color:#CFCCC1" style-hover="color:#D9B872">Themen &amp; Sammlungen</a>
-        <a href="Der-Verein.html" style="color:#CFCCC1" style-hover="color:#D9B872">Der Verein</a>
-        <a href="Spenden.html" style="color:#CFCCC1" style-hover="color:#D9B872">Spenden</a>
-        <a href="Mitglied-werden.html" style="color:#CFCCC1" style-hover="color:#D9B872">Mitglied werden</a>
-        <a href="Kontakt.html" style="color:#CFCCC1" style-hover="color:#D9B872">Kontakt</a>
+        <a class="hv11" href="index.html" style="color:#CFCCC1">Startseite</a>
+        <a class="hv11" href="Neuigkeiten.html" style="color:#CFCCC1">Neuigkeiten &amp; Events</a>
+        <a class="hv11" href="Themen-und-Sammlungen.html" style="color:#CFCCC1">Themen &amp; Sammlungen</a>
+        <a class="hv11" href="Der-Verein.html" style="color:#CFCCC1">Der Verein</a>
+        <a class="hv11" href="Spenden.html" style="color:#CFCCC1">Spenden</a>
+        <a class="hv11" href="Mitglied-werden.html" style="color:#CFCCC1">Mitglied werden</a>
+        <a class="hv11" href="Kontakt.html" style="color:#CFCCC1">Kontakt</a>
       </div>
     </div>
     <div>
@@ -203,24 +219,24 @@ input,textarea{font-family:inherit}
       <p style="margin:14px 0 0;color:#A8A499">Konto Nr. 448.465.50.145</p>
       <p style="margin:6px 0 0;font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#F5F0E6;letter-spacing:0.02em">CH26 0878 5044 8465 5014 5</p>
       <p style="margin:6px 0 0;color:#A8A499">PC-Konto der Bank: PC 30-38168-4</p>
-      <a href="Spenden.html" style="display:inline-block;margin-top:18px;color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)" style-hover="color:#F5F0E6;border-bottom-color:#F5F0E6">Alle Spendenwege →</a>
+      <a class="hv12" href="Spenden.html" style="display:inline-block;margin-top:18px;color:#D9B872;border-bottom:1px solid rgba(217,184,114,0.35)">Alle Spendenwege →</a>
     </div>
     <div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7E7A6E;padding-bottom:14px;border-bottom:1px solid #24322E;margin-bottom:16px">Partner</div>
       <div style="display:flex;flex-direction:column;gap:9px">
-        <a href="https://www.gaiamedia.org" style="color:#CFCCC1" style-hover="color:#D9B872">Gaia Media – geplanter Ort in Basel ab 2028</a>
-        <a href="https://www.nachtschatten.ch" style="color:#CFCCC1" style-hover="color:#D9B872">Nachtschatten Verlag, Solothurn</a>
+        <a class="hv11" href="https://www.gaiamedia.org" style="color:#CFCCC1">Gaia Media – geplanter Ort in Basel ab 2028</a>
+        <a class="hv11" href="https://www.nachtschatten.ch" style="color:#CFCCC1">Nachtschatten Verlag, Solothurn</a>
       </div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:#7E7A6E;padding:26px 0 14px;border-bottom:1px solid #24322E;margin-bottom:16px">Folgen</div>
-      <a href="https://www.facebook.com/Bibliotheca-Psychonautica-468630186536187/" style="color:#CFCCC1" style-hover="color:#D9B872">Facebook-Seite</a>
+      <a class="hv11" href="https://www.facebook.com/Bibliotheca-Psychonautica-468630186536187/" style="color:#CFCCC1">Facebook-Seite</a>
     </div>
   </div>
   <div style="border-top:1px solid #24322E">
     <div style="max-width:1280px;margin:0 auto;padding:22px 24px 34px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:13px;color:#7E7A6E">
       <span>© Verein Bibliotheca Psychonautica · Sitz in Solothurn · gegründet 10. November 2012</span>
       <span style="display:flex;gap:22px">
-        <a href="Impressum.html" style="color:#7E7A6E" style-hover="color:#D9B872">Impressum</a>
-        <a href="Datenschutz.html" style="color:#7E7A6E" style-hover="color:#D9B872">Datenschutz</a>
+        <a class="hv11" href="Impressum.html" style="color:#7E7A6E">Impressum</a>
+        <a class="hv11" href="Datenschutz.html" style="color:#7E7A6E">Datenschutz</a>
       </span>
     </div>
   </div>

@@ -16,6 +16,7 @@ import json
 import os
 import re
 import sys
+from html import escape
 from html.parser import HTMLParser
 from urllib.parse import quote
 
@@ -61,10 +62,21 @@ JS_MAP = {
     "'noch offen'": "'not yet decided'",
     "'IBAN kopiert'": "'IBAN copied'",
     "'Kopieren fehlgeschlagen'": "'Copy failed'",
+    "'Mitgliedschaft: '": "'Membership: '",
+    "'Anmeldung Mitgliedschaft'": "'Membership application'",
+    "'noch nicht gewählt'": "'not yet chosen'",
+    "'Vorname: '": "'First name: '",
+    "'Name: '": "'Surname: '",
+    "'Ort: '": "'Town/city: '",
+    "'Land: '": "'Country: '",
+    "'Firma: '": "'Company: '",
+    "'Strasse: '": "'Street: '",
+    "'Telefon: '": "'Phone: '",
+    "'Webseite: '": "'Website: '",
 }
 
 SKIP_TAGS = {"style", "script"}
-TEXT_ATTRS = {"alt", "title", "placeholder", "aria-label", "content", "value"}
+TEXT_ATTRS = {"alt", "title", "placeholder", "aria-label", "content", "value", "data-tier"}
 HAS_LETTER = re.compile(r"[A-Za-zÄÖÜäöüß]")
 
 
@@ -72,8 +84,12 @@ def translatable_attr(name, value, attrs):
     """Whether this attribute holds prose a reader will see."""
     if name not in TEXT_ATTRS or not value:
         return False
-    if name == "content" and attrs.get("name") not in ("description", "keywords"):
-        return False
+    if name == "content":
+        prop = attrs.get("property", "")
+        if prop in ("og:title", "og:description"):
+            return True
+        if attrs.get("name") not in ("description", "keywords"):
+            return False
     if name == "value" and attrs.get("type") not in ("submit", "button", None):
         return False
     return bool(HAS_LETTER.search(value))
@@ -168,7 +184,12 @@ def translate_page(source_page, translations, missing):
 
     def on_attr(name, value, attrs, start, raw):
         new = None
-        if translatable_attr(name, value, attrs):
+        prop = attrs.get("property", "")
+        if name == "content" and prop == "og:url":
+            new = value.replace("/" + source_page, "/en/" + PAGES[source_page])
+        elif name == "content" and prop == "og:locale":
+            new = "en_GB"
+        if new is None and translatable_attr(name, value, attrs):
             core = value.strip()
             if core in translations:
                 new = value.replace(core, translations[core], 1)
@@ -178,10 +199,14 @@ def translate_page(source_page, translations, missing):
             new = rewrite_link(value, source_page)
         if new is None or new == value:
             return
-        m = re.search(re.escape(name) + r'(\s*=\s*)(["\'])' + re.escape(value) + r"\2", raw)
-        if m:
-            q = m.group(2)
-            edits.append((start + m.start(), start + m.end(), f"{name}={q}{new}{q}"))
+        # the parser hands back decoded attribute values, but `raw` still holds
+        # the entities, so try both spellings and answer in the same one
+        for source_form, target in ((value, new), (escape(value), escape(new))):
+            m = re.search(re.escape(name) + r'(\s*=\s*)(["\'])' + re.escape(source_form) + r"\2", raw)
+            if m:
+                q = m.group(2)
+                edits.append((start + m.start(), start + m.end(), f"{name}={q}{target}{q}"))
+                break
 
     Walker(src, on_text, on_attr).feed(src)
 
