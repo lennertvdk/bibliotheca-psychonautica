@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bibliotheca Psychonautica">
-  <rect width="64" height="64" fill="#14231F"/>
-  <rect x="5" y="5" width="54" height="54" fill="none" stroke="#D9B872" stroke-width="2"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Georgia,'Times New Roman',serif"
-        font-size="30" font-weight="500" fill="#D9B872" letter-spacing="1">BP</text>
+  <rect width="64" height="64" fill="#0E1A18"/>
+  <text x="32" y="47.5" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', 'Bookman Old Style', serif"
+        font-size="48" font-weight="400" fill="#FFFFFF">B</text>
 </svg>
